@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Abram Noe</title>
+
+    <meta name="description" content="Contact section for Abram Noe, Full Stack Developer learner.">
+    <meta name="author" content="Motswadisi Abram Noe">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <!-- Navigation links group -->
+            <div class="nav-links">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="learning.html">Learning</a>
+                <a class="nav-link" href="projects.html">Projects</a>
+                <a class="nav-link" href="contact.html" aria-current="page">Contact</a>
+            </div>
+
+            <!-- Theme switcher group -->
+            <div class="theme-controls">
+                <button class="theme-btn" data-theme="light-theme">Light</button>
+                <button class="theme-btn" data-theme="dark-theme">Dark</button>
+                <button class="theme-btn" data-theme="warm-theme">Warm</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <section id="contact">
+            <h2>Contact</h2>
+
+            <!-- Thanking message after clicking submit -->
+            <p id="statusMessage" class="hidden">Thank you for visiting! You can contact me using the form below:</p>
+
+            <!-- Contact Form Placeholder -->
+            <form id="contactForm" action="https://formspree.io/f/xjgkekkp" method="POST">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+            <!-- Load reCAPTCHA API -->
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <section class="social-media">
+            <a href="https://github.com/abram-noe" target="_blank">
+                <img id="social-logo" src="https://abram-noe.github.io/images/github-logo_095213.jpg" alt="GitHub logo" width="40">
+            </a>
+            <a href="https://www.linkedin.com/in/abram-noe" target="_blank">
+                <img id="social-logo" src="https://abram-noe.github.io/images/linkedin-logo.png" alt="LinkedIn logo" width="40">
+            </a>
+            <a href="https://twitter.com/abram-noe21801" target="_blank">
+                <img id="social-logo" src="https://abram-noe.github.io/images/twitter-logo_095243.png" alt="Twitter/X logo" width="40">
+            </a>
+        </section>
+
+        <p class="reserve">&copy; 2025 Motswadisi Abram Noe. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
