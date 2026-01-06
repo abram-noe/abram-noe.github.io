@@ -1,0 +1,252 @@
+/* ==================== ROOT VARIABLES ==================== */
+:root {
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --transition: 0.3s ease;
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* ==================== BASE LAYOUT ==================== */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+main { flex: 1; }
+
+/* ==================== SECTIONS ==================== */
+#home, #projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#about, #learning {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+}
+
+/* ==================== THEMES ==================== */
+body.light-theme { background-color: #f5f5f5; color: #333; }
+body.dark-theme { background-color: #1e1e1e; color: #f5f5f5; }
+body.warm-theme { background-color: #fff8f0; color: #333; }
+
+/* NAV THEME COLORS */
+body.light-theme nav { background-color: #4a90e2; }
+body.dark-theme nav { background-color: #2a2a2a; }
+body.warm-theme nav { background-color: #ff6f61; }
+
+body.light-theme nav a,
+body.light-theme nav button {
+    background-color: #fff;
+    color: #4a90e2;
+    border-color: #4a90e2;
+}
+
+body.dark-theme nav a,
+body.dark-theme nav button {
+    background-color: #444;
+    color: #f5f5f5;
+    border-color: #f5f5f5;
+}
+
+body.warm-theme nav a,
+body.warm-theme nav button {
+    background-color: #fff;
+    color: #ff6f61;
+    border-color: #ff6f61;
+}
+
+/* ==================== NAVIGATION (FIXED) ==================== */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Normalize ALL nav items */
+nav a,
+nav button {
+    min-width: 100px;
+    padding: 8px 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius-sm);
+    border: 2px solid;
+    cursor: pointer;
+
+    background: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Hover – SAME behavior for all */
+nav a:hover,
+nav button:hover {
+    opacity: 0.85;
+    transform: scale(1.05) translateY(-3px);
+}
+
+/* Active press */
+nav a:active,
+nav button:active {
+    transform: scale(0.98);
+}
+
+/* ==================== PROJECTS ==================== */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    background-color: #fff;
+}
+
+body.dark-theme .project-card { background-color: #2a2a2a; }
+body.warm-theme .project-card { background-color: #fff8f0; }
+
+.project-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+.project-card h3 {
+    text-align: center;
+    margin: 10px;
+}
+
+.project-card figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover figcaption {
+    transform: translateY(0);
+}
+
+.projects-container hr { display: none; }
+
+/* ==================== IMAGES ==================== */
+.screenshot { display: block; }
+
+/* ==================== PROFILE & SOCIAL ==================== */
+.profile-picture {
+    border-radius: 50%;
+    border: 5px solid rgba(0,0,255,0.5);
+}
+
+.social-logo {
+    clip-path: circle(50%);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.social-logo:hover {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 0.8;
+}
+
+/* ==================== CONTACT FORM ==================== */
+#contact {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    background-color: rgba(255,255,255,0.95);
+}
+
+body.dark-theme #contact {
+    background-color: #2a2a2a;
+    color: #f5f5f5;
+}
+
+body.warm-theme #contact {
+    background-color: #fff5f0;
+}
+
+#contact input,
+#contact textarea,
+#contact button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: var(--radius-sm);
+}
+
+#contact button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #357ab8;
+}
+
+/* ==================== STATUS ==================== */
+#verifyStatus {
+    text-align: center;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+}
+
+.hidden { display: none !important; }
+
+/* ==================== FOOTER ==================== */
+footer {
+    margin-top: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.social-media { perspective: 400px; }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
